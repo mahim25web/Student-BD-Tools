@@ -6,10 +6,12 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { SITE } from "@/lib/seo/site";
 import "./globals.css";
 
+// Optimization 1: Enforce font preloading & display swap for instant paints
 const bodyFont = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
+  preload: true,
 });
 
 const displayFont = Lexend({
@@ -17,6 +19,7 @@ const displayFont = Lexend({
   variable: "--font-display",
   display: "swap",
   weight: ["500", "600", "700"],
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -54,9 +57,14 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${bodyFont.variable} ${displayFont.variable}`}>
+      <head>
+        {/* Optimization 2: Warm up font domain network requests early */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
-        className={`${bodyFont.variable} ${displayFont.variable} min-h-screen bg-white font-sans text-navy-900 antialiased dark:bg-navy-950 dark:text-navy-50`}
+        className="min-h-screen bg-white font-sans text-navy-900 antialiased dark:bg-navy-950 dark:text-navy-50"
       >
         <script
           type="application/ld+json"
