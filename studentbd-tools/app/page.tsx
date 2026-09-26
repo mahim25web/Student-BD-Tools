@@ -36,7 +36,8 @@ export default function HomePage() {
 
           {/* CSS/icon-built illustration standing in for a hero image */}
           <div className="mx-auto w-full max-w-sm rounded-2xl border border-navy-200 bg-white p-5 shadow-sm dark:border-navy-700 dark:bg-navy-900">
-            <p className="text-xs font-medium uppercase tracking-wide text-navy-400 dark:text-navy-500">
+            {/* UPDATED: Contrast increased from text-navy-400/500 to text-navy-700/300 */}
+            <p className="text-xs font-semibold uppercase tracking-wide text-navy-700 dark:text-navy-300">
               SSC Result Preview
             </p>
             <div className="mt-3 space-y-2">

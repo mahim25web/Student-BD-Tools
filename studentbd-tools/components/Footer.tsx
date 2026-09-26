@@ -35,7 +35,7 @@ export function Footer() {
                 StudentBD Tools
               </span>
             </div>
-            <p className="mt-3 max-w-xs text-sm text-navy-600 dark:text-navy-300">
+            <p className="mt-3 max-w-xs text-sm text-navy-700 dark:text-navy-200">
               Free tools for every Bangladeshi student.
             </p>
           </div>
@@ -50,7 +50,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-navy-600 transition-colors hover:text-navy-900 dark:text-navy-300 dark:hover:text-white"
+                      className="text-sm text-navy-700 transition-colors hover:text-navy-900 dark:text-navy-200 dark:hover:text-white"
                     >
                       {link.label}
                     </Link>
@@ -61,7 +61,8 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 border-t border-navy-100 pt-6 text-sm text-navy-500 dark:border-navy-800 dark:text-navy-400">
+        {/* UPDATED: Contrast increased from text-navy-500/400 to text-navy-700/dark:text-navy-300 */}
+        <div className="mt-10 border-t border-navy-100 pt-6 text-sm text-navy-700 dark:border-navy-800 dark:text-navy-300">
           © 2026 StudentBD Tools. All results are for reference — always
           verify official rules for your board, university, and academic
           year.
