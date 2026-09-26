@@ -3,6 +3,8 @@ import { TOOLS } from "@/lib/seo/toolsData";
 import { SITE } from "@/lib/seo/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = SITE.url.replace(/\/$/, "");
+
   const staticRoutes = [
     "",
     "/calculators",
@@ -16,14 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((path) => ({
-    url: `${SITE.url}${path}`,
+    url: `${baseUrl}${path}`,
     lastModified: now,
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: path === "" ? 1 : 0.7,
   }));
 
   const toolEntries: MetadataRoute.Sitemap = TOOLS.map((tool) => ({
-    url: `${SITE.url}${tool.href}`,
+    url: `${baseUrl}${tool.href.startsWith("/") ? tool.href : `/${tool.href}`}`,
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.8,
