@@ -4,7 +4,7 @@ export const SITE = {
   description:
     "Free calculators and study tools for Bangladeshi SSC, HSC and university students — GPA, CGPA, percentage, age and more.",
   // Update this once the project has a real production domain.
-  url: "https://studentbdtools.vercel.app",
+  url: "https://studentbd-tools.vercel.app",
 };
 
 export function absoluteUrl(path: string): string {
