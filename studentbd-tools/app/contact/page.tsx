@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 // Update this to the project owner's real inbox before launch.
-const CONTACT_EMAIL = "hello@studentbdtools.com";
+const CONTACT_EMAIL = "mahimahmmad77@gmail.com";
 
 export default function ContactPage() {
   return (
@@ -34,13 +34,7 @@ export default function ContactPage() {
         {CONTACT_EMAIL}
       </a>
 
-      <p className="mt-4 text-sm text-navy-500 dark:text-navy-400">
-        This is a placeholder address — update{" "}
-        <code className="rounded bg-navy-100 px-1 py-0.5 dark:bg-navy-800">
-          app/contact/page.tsx
-        </code>{" "}
-        with a real inbox before deploying to production.
-      </p>
+      
     </div>
   );
 }
