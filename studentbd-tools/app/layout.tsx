@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Lexend } from "next/font/google";
+import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -80,6 +81,14 @@ export default function RootLayout({
         {/* Optimization 2: Warm up font domain network requests early */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* AdSense Script Optimization */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1970161002258960"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className="min-h-screen bg-white font-sans text-navy-900 antialiased dark:bg-navy-950 dark:text-navy-50"
