@@ -60,6 +60,11 @@ export const metadata: Metadata = {
   verification: {
     google: "ym1H6PK_PT2uKy5MNLYyzxILUl5f73RW4OPJbwmFFm8",
   },
+  
+  // Google AdSense Meta Verification Tag
+  other: {
+    "google-adsense-account": "ca-pub-1970161002258960",
+  },
 };
 
 export default function RootLayout({
