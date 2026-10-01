@@ -148,6 +148,27 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* New section for the date difference calculator */}
+      <section className="mx-auto max-w-content px-4 py-14 sm:px-6 lg:px-8">
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <h2 className="font-display text-2xl font-semibold text-navy-900 dark:text-white">
+              Calculators
+            </h2>
+            <p className="mt-1 text-sm text-navy-600 dark:text-navy-300">
+              Explore additional calculators for various needs.
+            </p>
+          </div>
+          <Link
+            href="/calculators/date-difference-calculator"
+            className="inline-flex items-center gap-2 rounded-lg bg-navy-900 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-navy-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500 dark:bg-gold-500 dark:text-navy-950 dark:hover:bg-gold-400"
+          >
+            Date Difference Calculator
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

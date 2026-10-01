@@ -69,6 +69,15 @@ export const TOOLS: ToolMeta[] = [
     keywords: ["age", "birthday", "date of birth", "dob"],
   },
   {
+    slug: "date-difference-calculator",
+    name: "Date Difference Calculator",
+    href: "/calculators/date-difference-calculator",
+    category: "General",
+    icon: "calendar-days",
+    shortDescription: "Find the exact time between two dates in years, months, and days.",
+    keywords: ["date difference", "days between dates", "date calculator", "time between"],
+  },
+  {
     slug: "marks-calculator",
     name: "Marks Calculator",
     href: "/calculators/marks-calculator",

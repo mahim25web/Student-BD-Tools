@@ -88,6 +88,57 @@ export function calculateAge(
   };
 }
 
+// Date Difference Calculator Logic Exported for DateDifferenceCalculator component
+export interface DateDiffResult {
+  years: number;
+  months: number;
+  days: number;
+  totalDays: number;
+  totalWeeks: number;
+  totalMonths: number;
+}
+
+export function calculateDateDifference(
+  startDate: Date,
+  endDate: Date
+): { ok: true; data: DateDiffResult } | { ok: false; error: "invalid-date" | "start-after-end" } {
+  if (Number.isNaN(startDate.getTime()) || Number.isNaN(endDate.getTime())) {
+    return { ok: false, error: "invalid-date" };
+  }
+  if (startDate.getTime() > endDate.getTime()) {
+    return { ok: false, error: "start-after-end" };
+  }
+
+  let years = endDate.getFullYear() - startDate.getFullYear();
+  let months = endDate.getMonth() - startDate.getMonth();
+  let days = endDate.getDate() - startDate.getDate();
+
+  if (days < 0) {
+    months -= 1;
+    const prevMonth = new Date(endDate.getFullYear(), endDate.getMonth(), 0);
+    days += prevMonth.getDate();
+  }
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const totalDays = Math.floor((endDate.getTime() - startDate.getTime()) / msPerDay);
+
+  return {
+    ok: true,
+    data: {
+      years,
+      months,
+      days,
+      totalDays,
+      totalWeeks: Math.floor(totalDays / 7),
+      totalMonths: years * 12 + months,
+    },
+  };
+}
+
 export interface MarksSubject {
   id: string;
   name: string;
